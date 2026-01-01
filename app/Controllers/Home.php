@@ -8,4 +8,10 @@ class Home extends BaseController
     {
         return view('welcome_message');
     }
+
+    public function testDB()
+    {
+        $db = \Config\Database::connect();
+        return $db->connect() ? 'Koneksi OK' : 'Gagal';
+    }
 }
