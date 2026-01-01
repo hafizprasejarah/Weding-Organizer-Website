@@ -1,5 +1,5 @@
-# Nama Project
-wedding organizer website
+# Wedding Organizer Website
+
 
 ## Description
 A web application developed using CodeIgniter 4 and Tailwind CSS to complete the final semester assignment for the Web 2 course.
