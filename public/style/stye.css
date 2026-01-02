@@ -1,0 +1,18 @@
+@import "tailwindcss";
+:root {
+    /* navbar */
+    --pink-bold: #C63D5C; /*warna utama */
+    --pink-soft: #F4B6C2; /*penyeimbang*/
+
+    /* section dan card */
+    --pink-bg: #FFF5F7; /*card*/
+    --pink-card: #FADADD; /*Background*/
+
+    /*Headings dan Body Text*/
+    --text-heading: #7A1E3A; /*Headings*/
+    --text-body: #5F5F5F; /*Body Text*/
+
+    /* Untuk icon, hover, badge, garis */
+    --accent-rose-gold: #B76E79;
+    --accent-gold: #E6C7A2;
+}
