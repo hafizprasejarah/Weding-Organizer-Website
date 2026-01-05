@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="<?= base_url('css/style.css?v=' . time()) ?>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -44,34 +45,32 @@
         </section>
 
         <!-- card section -->
-        <section class=" bg-[#f3dfe1]  flex flex-row justify-center items-center gap-10 p-[20px] py-20">
+        <section class=" bg-[#f3dfe1]  flex flex-row justify-center items-center gap-2 p-[20px] py-15">
             <!-- cards -->
-            <div class="w-[350px] min-h-[160px] bg-[#f9f0f1] rounded-[15px] shadow-lg flex items-center gap-6 p-6">
-                <div>Icons</div>
+            <div class="w-[370px] h-[130px] bg-[#f9f0f1] rounded-[10px] shadow-lg flex items-center px-4 py-5 gap-2">
+                <div class="fa-regular fa-calendar-days text-[#C63D5C] text-[68px] self-start" ></div>
                 <div class="gap-6 flex flex-col">
-                    <h1 class="text-[25px] font-semibold ">Wedding Planing</h1>
-                    <p class="text-[15px] font-medium">Full planing & coordination</p>
+                    <h1 class="text-[22px] font-semibold text-[#C63D5C]">Wedding Planing</h1>
+                    <p class="text-[15px] font-semibold">Full planing & coordination</p>
                 </div>
             </div>
 
             <!-- cards -->
-            <div class="w-[350px] min-h-[160px] bg-[#f9f0f1] rounded-[15px] shadow-lg flex items-center gap-6 p-6">
-                <div>Icons</div>
+            <div class="w-[370px] h-[130px] bg-[#f9f0f1] rounded-[10px] shadow-lg flex items-center px-4 py-5 gap-2">
+                <div class="fa-solid fa-fan  text-[#C63D5C] text-[68px] self-start" ></div>
                 <div class="gap-6 flex flex-col">
-                    <h1 class="text-[25px] font-semibold ">Beautiful Decor</h1>
-                    <p class="text-[15px] font-medium">Elegant romantic & setup</p>
+                    <h1 class="text-[22px] font-semibold text-[#C63D5C]">Beautiful Decorg</h1>
+                    <p class="text-[15px] font-semibold">Elegant romantic & setup</p>
                 </div>
             </div>
-
             <!-- cards -->
-            <div class="w-[350px] min-h-[160px] bg-[#f9f0f1] rounded-[15px] shadow-lg flex items-center gap-6 p-6">
-                <div>Icons</div>
-                <div class="gap-6 flex flex-col">
-                    <h1 class="text-[25px] font-semibold ">Photo & Video</h1>
-                    <p class="text-[15px] font-medium">Capture your special moments</p>
+            <div class="w-[370px] h-[130px] bg-[#f9f0f1] rounded-[10px] shadow-lg flex items-center px-4 py-5 gap-2">
+                <div class="fa-solid fa-camera-retro text-[#C63D5C] text-[68px] self-start" ></div>
+                <div class="gap-5 flex flex-col">
+                    <h1 class="text-[22px] font-semibold text-[#C63D5C]">Photo & Video</h1>
+                    <p class="text-[15px] font-semibold">Capture your special moments</p>
                 </div>
             </div>
-
 
         </section>
 
