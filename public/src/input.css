@@ -1,27 +1,89 @@
 @import "tailwindcss";
- 
-body {
-     font-family: "Montserrat", sans-serif;
-}
 
-.font-heading {
-  font-family: "Poppins", sans-serif;
-}
+
 
 :root {
     /* navbar */
-    --pink-bold: #C63D5C; /*warna utama */
-    --pink-soft: #F4B6C2; /*penyeimbang*/
+    --pink-bold: #C63D5C;
+    /*warna utama */
+    --pink-soft: #F4B6C2;
+    /*penyeimbang*/
 
     /* section dan card */
-    --pink-bg: #FFF5F7; /*card*/
-    --pink-card: #FADADD; /*Background*/
+    --pink-bg: #FFF5F7;
+    /*card*/
+    --pink-card: #FADADD;
+    /*Background*/
 
     /*Headings dan Body Text*/
-    --text-heading: #7A1E3A; /*Headings*/
-    --text-body: #5F5F5F; /*Body Text*/
+    --text-heading: #7A1E3A;
+    /*Headings*/
+    --text-body: #5F5F5F;
+    /*Body Text*/
 
     /* Untuk icon, hover, badge, garis */
     --accent-rose-gold: #B76E79;
     --accent-gold: #E6C7A2;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+.font-heading {
+    font-family: "Poppins", sans-serif;
+}
+
+.logo-font {
+    font-family: "Dancing Script", cursive;
+}
+
+.hero-section {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: 110%;
+    background-position: -240% 60%;
+    
+    position: relative;
+}
+
+.hero-gradient {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    backdrop-filter: saturate(120%) contrast(105%);
+
+    background:
+        /* 🌸 radial kiri atas */
+        radial-gradient(
+            ellipse at top left,
+            rgba(244, 182, 194, 1) 0%,
+            rgba(244, 182, 194, 0.85) 28%,
+            rgba(244, 182, 194, 0.6) 42%,
+            rgba(244, 182, 194, 0.35) 50%,
+            rgba(244, 182, 194, 0.15) 55%,
+            rgba(244, 182, 194, 0) 58%
+        ),
+
+        /* 🌹 radial kiri bawah */
+        radial-gradient(
+            ellipse at bottom left,
+            rgba(255, 79, 120, 1) 0%,
+            rgba(255, 79, 120, 0.9) 30%,
+            rgba(255, 79, 120, 0.65) 45%,
+            rgba(255, 79, 120, 0.4) 52%,
+            rgba(255, 79, 120, 0.18) 56%,
+            rgba(255, 79, 120, 0) 58%
+        ),
+
+        /* ➜ linear kiri → kanan */
+        linear-gradient(
+            to right,
+            rgba(198, 61, 92, 0.95) 0%,
+            rgba(198, 61, 92, 0.85) 30%,
+            rgba(198, 61, 92, 0.65) 45%,
+            rgba(198, 61, 92, 0.35) 50%,
+            rgba(198, 61, 92, 0.15) 55%,
+            rgba(198, 61, 92, 0) 58%
+        );
 }
