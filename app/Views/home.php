@@ -73,17 +73,41 @@
             </div>
         </section>
 
-        <section class="h-screen  bg-[radial-gradient(circle_at_top,#ff4f78,#C63D5C)] py-15">
-            <div class="flex text-[#FFF5F7] flex-row items-center px-12 w-full">
+        <section class="h-screen py-15 relative overflow-hidden">
+            <div class="absolute bg-[radial-gradient(circle_at_top,#ff4f78,#C63D5C)] top-0 left-0 h-[70%] w-full">
+            </div>
+            <div class="absolute bg-[#f9cfd3] bottom-0 left-0 h-[30%] w-full">
+            </div>
+
+            <div class="flex text-[#FFF5F7] flex-row items-center px-12 w-full z-10 relative">
                 <div class="border rounded-[5px] border-[#FFF5F7] w-[30%]"></div>
-                <h1 class="logo-font text-center text-[60px] font-medium w-[40%]">Our Love Stories</h1>
+                <h1 class="logo-font text-center text-[60px] font-medium w-[40%] [text-shadow:0_3px_8px_rgba(0,0,0,0.5)]">Our Love Stories</h1>
                 <div class="border rounded-[5px] border-[#FFF5F7] w-[30%]"></div>
             </div>
-            <div class="text-center">
-                <p class="text-[#FFF5F7]  text-[25px] font-medium font-heading">
+            <div class="text-center z-10">
+                <p class="text-[#FFF5F7]  text-[25px] font-medium font-heading heading-underline [text-shadow:0_3px_8px_rgba(0,0,0,0.5)]">
                     Unforgettable Weddings
                 </p>
             </div>
+
+            <!-- card Photo -->
+            <div class="flex flex-row gap-5 relative z-10 w-full justify-center items-center py-10  px-12">
+
+                <div class="p-4 bg-[#FFF5F7] h-[300px] w-1/2">
+                    <img class="" src="" alt="">
+                    d
+                </div>
+
+                <div class="p-4 bg-[#FFF5F7] h-[300px] w-1/2">
+                    <img class="" src="" alt="">
+                    dada
+                </div>
+            </div>
+
+            <form action="" class="relative z-10">
+                <button class=" px-6 py-3 w-fit text-[16px] rounded-[7px] font-bold text-[#bb2a55] bg-[linear-gradient(160deg,#FADADD,#F4B6C2)] hover:brightness-105 transition">
+                    View Gallery  </button>>
+            </form>
         </section>
 
         <?= $this->include('layout/footer') ?>

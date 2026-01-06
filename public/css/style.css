@@ -187,11 +187,23 @@
   .top-0 {
     top: calc(var(--spacing) * 0);
   }
+  .bottom-0 {
+    bottom: calc(var(--spacing) * 0);
+  }
   .left-0 {
     left: calc(var(--spacing) * 0);
   }
+  .z-0 {
+    z-index: 0;
+  }
+  .z-1 {
+    z-index: 1;
+  }
   .z-10 {
     z-index: 10;
+  }
+  .z-20 {
+    z-index: 20;
   }
   .z-99 {
     z-index: 99;
@@ -232,8 +244,26 @@
   .table {
     display: table;
   }
+  .h-\[30\%\] {
+    height: 30%;
+  }
+  .h-\[70\%\] {
+    height: 70%;
+  }
   .h-\[130px\] {
     height: 130px;
+  }
+  .h-\[200px\] {
+    height: 200px;
+  }
+  .h-\[300px\] {
+    height: 300px;
+  }
+  .h-\[400px\] {
+    height: 400px;
+  }
+  .h-\[600px\] {
+    height: 600px;
   }
   .h-screen {
     height: 100vh;
@@ -243,6 +273,15 @@
   }
   .w-1\/2 {
     width: calc(1/2 * 100%);
+  }
+  .w-1\/3 {
+    width: calc(1/3 * 100%);
+  }
+  .w-1\/4 {
+    width: calc(1/4 * 100%);
+  }
+  .w-1\/25 {
+    width: calc(1/25 * 100%);
   }
   .w-\[30\%\] {
     width: 30%;
@@ -264,6 +303,9 @@
   }
   .border-collapse {
     border-collapse: collapse;
+  }
+  .transform {
+    transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
   }
   .resize {
     resize: both;
@@ -295,8 +337,14 @@
   .gap-6 {
     gap: calc(var(--spacing) * 6);
   }
+  .gap-7 {
+    gap: calc(var(--spacing) * 7);
+  }
   .gap-10 {
     gap: calc(var(--spacing) * 10);
+  }
+  .overflow-hidden {
+    overflow: hidden;
   }
   .rounded-\[5px\] {
     border-radius: 5px;
@@ -324,11 +372,17 @@
   .bg-\[\#C63D5C\] {
     background-color: #C63D5C;
   }
+  .bg-\[\#FFF5F7\] {
+    background-color: #FFF5F7;
+  }
   .bg-\[\#f6e7e9\] {
     background-color: #f6e7e9;
   }
   .bg-\[\#f9cfd3\] {
     background-color: #f9cfd3;
+  }
+  .bg-\[FFF5F7\] {
+    background-color: FFF5F7;
   }
   .bg-linear-to-l {
     --tw-gradient-position: to left;
@@ -343,12 +397,6 @@
   .bg-\[radial-gradient\(circle_at_top\,\#ff4f78\,\#C63D5C\)\] {
     background-image: radial-gradient(circle at top,#ff4f78,#C63D5C);
   }
-  .bg-\[radial-gradient\(circle_at_top\,\#ff4f78\,\#C63D5C\,\#ff4f78\)\] {
-    background-image: radial-gradient(circle at top,#ff4f78,#C63D5C,#ff4f78);
-  }
-  .bg-\[radial-gradient\(circle_at_top\,\#ff4f78\,\#C63D5C\,\)\] {
-    background-image: radial-gradient(circle at top,#ff4f78,#C63D5C,);
-  }
   .from-\[\#ff6186\] {
     --tw-gradient-from: #ff6186;
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
@@ -359,6 +407,9 @@
   }
   .bg-cover {
     background-size: cover;
+  }
+  .p-4 {
+    padding: calc(var(--spacing) * 4);
   }
   .p-\[20px\] {
     padding: 20px;
@@ -383,6 +434,9 @@
   }
   .py-5 {
     padding-block: calc(var(--spacing) * 5);
+  }
+  .py-10 {
+    padding-block: calc(var(--spacing) * 10);
   }
   .py-15 {
     padding-block: calc(var(--spacing) * 15);
@@ -488,6 +542,12 @@
     --tw-duration: 300ms;
     transition-duration: 300ms;
   }
+  .\[text-shadow\:0_3px_8px_rgba\(0\,0\,0\,0\.5\)\] {
+    text-shadow: 0 3px 8px rgba(0,0,0,0.5);
+  }
+  .\[text-shadow\:0_3px_8px_rgba\(0\,0\,0\,0\.25\)\] {
+    text-shadow: 0 3px 8px rgba(0,0,0,0.25);
+  }
   .hover\:border-\[\#ff9cb0\] {
     &:hover {
       @media (hover: hover) {
@@ -536,7 +596,42 @@ body {
   inset: 0;
   z-index: 0;
   backdrop-filter: saturate(120%) contrast(105%);
-  background: radial-gradient( ellipse at top left, rgba(244, 182, 194, 1) 0%, rgba(244, 182, 194, 0.85) 28%, rgba(244, 182, 194, 0.6) 42%, rgba(244, 182, 194, 0.35) 50%, rgba(244, 182, 194, 0.15) 55%, rgba(244, 182, 194, 0) 58% ), radial-gradient( ellipse at bottom left, rgba(255, 79, 120, 1) 0%, rgb(255, 79, 120) 30%, rgba(255, 79, 120, 0.65) 45%, rgba(255, 79, 120, 0.4) 52%, rgba(255, 79, 120, 0.18) 56%, rgba(255, 79, 120, 0) 58% ),  linear-gradient( to right, rgba(198, 61, 92, 0.95) 0%, rgba(198, 61, 92, 0.85) 30%, rgba(198, 61, 92, 0.65) 45%, rgba(198, 61, 92, 0.35) 50%, rgba(198, 61, 92, 0.15) 55%, rgba(198, 61, 92, 0) 58% );
+  background: radial-gradient(ellipse at top left, rgba(244, 182, 194, 1) 0%, rgba(244, 182, 194, 0.85) 28%, rgba(244, 182, 194, 0.6) 42%, rgba(244, 182, 194, 0.35) 50%, rgba(244, 182, 194, 0.15) 55%, rgba(244, 182, 194, 0) 58%), radial-gradient(ellipse at bottom left, rgba(255, 79, 120, 1) 0%, rgb(255, 79, 120) 30%, rgba(255, 79, 120, 0.65) 45%, rgba(255, 79, 120, 0.4) 52%, rgba(255, 79, 120, 0.18) 56%, rgba(255, 79, 120, 0) 58%),  linear-gradient(to right, rgba(198, 61, 92, 0.95) 0%, rgba(198, 61, 92, 0.85) 30%, rgba(198, 61, 92, 0.65) 45%, rgba(198, 61, 92, 0.35) 50%, rgba(198, 61, 92, 0.15) 55%, rgba(198, 61, 92, 0) 58%);
+}
+.heading-underline {
+  position: relative;
+  display: inline-block;
+}
+.heading-underline::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 80%;
+  height: 1px;
+  border-radius: 5px;
+  background-color: #FFF5F7;
+  transform: translateX(-50%);
+}
+@property --tw-rotate-x {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-rotate-y {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-rotate-z {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-skew-x {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-skew-y {
+  syntax: "*";
+  inherits: false;
 }
 @property --tw-border-style {
   syntax: "*";
@@ -763,6 +858,11 @@ body {
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
+      --tw-rotate-x: initial;
+      --tw-rotate-y: initial;
+      --tw-rotate-z: initial;
+      --tw-skew-x: initial;
+      --tw-skew-y: initial;
       --tw-border-style: solid;
       --tw-gradient-position: initial;
       --tw-gradient-from: #0000;
