@@ -6,6 +6,6 @@
         <li><a class="text-[#FFF5F7]" href="<?= base_url('/gallery') ?>">Gallery</a></li>
         <li><a class="text-[#FFF5F7]" href="<?= base_url('/gallery') ?>">Packages</a></li>
         <li><a class="text-[#FFF5F7]" href="<?= base_url('/about') ?>">Contact</a></li>
-        <li><a class="text-[#FFF5F7]" href="<?= base_url('/contact') ?>"><Button>BOOK NOW</Button></a></li>
+        <li><a class="text-[#FFF5F7]" href="<?= base_url('/contact') ?>"><Button class=" px-6 py-3 w-fit rounded-[7px] bg-[radial-gradient(circle_at_top,#C63D5C,#a3284d)] hover:brightness-110 transition">Book Now</Button></a></li>
     </ul>
 </nav>
