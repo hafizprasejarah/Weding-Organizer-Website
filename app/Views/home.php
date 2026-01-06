@@ -30,7 +30,7 @@
                     <h1 class="logo-font text-[80px] leading-none">
                         Creating Your Perfect Day
                     </h1>
-                    <p class="text-[20px] tracking-wide">
+                    <p class="font-heading text-[20px] tracking-wide">
                         EXPERIENCE YOUR DREAM WEDDING WITH US
                     </p>
                     <button
@@ -45,10 +45,10 @@
         </section>
 
         <!-- card section -->
-        <section class=" bg-[#f3dfe1]  flex flex-row justify-center items-center gap-2 p-[20px] py-15">
+        <section class=" bg-[#f9cfd3]  flex flex-row justify-center items-center gap-2 p-[20px] py-15">
             <!-- cards -->
-            <div class="w-[370px] h-[130px] bg-[#f9f0f1] rounded-[10px] shadow-lg flex items-center px-4 py-5 gap-2">
-                <div class="fa-regular fa-calendar-days text-[#C63D5C] text-[68px] self-start" ></div>
+            <div class="w-[370px] h-[130px] bg-[#f6e7e9] rounded-[10px] shadow-lg flex items-center px-4 py-5 gap-2 border-3 border-transparent hover:border-[#ff9cb0] transition-all duration-300">
+                <div class="fa-regular fa-calendar-days text-[#C63D5C] text-[58px]"></div>
                 <div class="gap-6 flex flex-col">
                     <h1 class="text-[22px] font-semibold text-[#C63D5C]">Wedding Planing</h1>
                     <p class="text-[15px] font-semibold">Full planing & coordination</p>
@@ -56,24 +56,35 @@
             </div>
 
             <!-- cards -->
-            <div class="w-[370px] h-[130px] bg-[#f9f0f1] rounded-[10px] shadow-lg flex items-center px-4 py-5 gap-2">
-                <div class="fa-solid fa-fan  text-[#C63D5C] text-[68px] self-start" ></div>
+            <div class="w-[370px] h-[130px] bg-[#f6e7e9] rounded-[10px] shadow-lg flex items-center px-4 py-5 gap-2 border-3 border-transparent hover:border-[#ff9cb0] transition-all duration-300">
+                <div class="fa-solid fa-fan  text-[#C63D5C] text-[58px]"></div>
                 <div class="gap-6 flex flex-col">
                     <h1 class="text-[22px] font-semibold text-[#C63D5C]">Beautiful Decorg</h1>
                     <p class="text-[15px] font-semibold">Elegant romantic & setup</p>
                 </div>
             </div>
             <!-- cards -->
-            <div class="w-[370px] h-[130px] bg-[#f9f0f1] rounded-[10px] shadow-lg flex items-center px-4 py-5 gap-2">
-                <div class="fa-solid fa-camera-retro text-[#C63D5C] text-[68px] self-start" ></div>
+            <div class="w-[370px] h-[130px] bg-[#f6e7e9] rounded-[10px] shadow-lg flex items-center px-4 py-5 gap-2 border-3 border-transparent hover:border-[#ff9cb0] transition-all duration-300">
+                <div class="fa-solid fa-camera-retro text-[#C63D5C] text-[58px]"></div>
                 <div class="gap-5 flex flex-col">
                     <h1 class="text-[22px] font-semibold text-[#C63D5C]">Photo & Video</h1>
                     <p class="text-[15px] font-semibold">Capture your special moments</p>
                 </div>
             </div>
-
         </section>
 
+        <section class="h-screen  bg-[radial-gradient(circle_at_top,#ff4f78,#C63D5C)] py-15">
+            <div class="flex text-[#FFF5F7] flex-row items-center px-12 w-full">
+                <div class="border rounded-[5px] border-[#FFF5F7] w-[30%]"></div>
+                <h1 class="logo-font text-center text-[60px] font-medium w-[40%]">Our Love Stories</h1>
+                <div class="border rounded-[5px] border-[#FFF5F7] w-[30%]"></div>
+            </div>
+            <div class="text-center">
+                <p class="text-[#FFF5F7]  text-[25px] font-medium font-heading">
+                    Unforgettable Weddings
+                </p>
+            </div>
+        </section>
 
         <?= $this->include('layout/footer') ?>
     </div>
