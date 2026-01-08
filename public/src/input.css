@@ -97,8 +97,47 @@ body {
     left: 50%;
     bottom: -6px;
     width: 80%;
-    height: 1px;
+    height: 1.5px;
     border-radius: 5px;
     background-color: #FFF5F7;
     transform: translateX(-50%);
 }
+
+
+/* navbar link base */
+.nav-link {
+    position: relative;
+    display: inline-block;
+    font-weight: 500;
+    color: #FFF5F7;
+    text-decoration: none;
+}
+
+/* underline default (hidden) */
+.nav-link::before {
+    content: "";
+    position: absolute;
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    bottom: -5px;                 /* jarak underline dari teks */
+    width: 0;
+    height: 1.2px;                  /* ketebalan underline */
+    background-color: #FFF5F7;
+    border-radius: 999px;
+    transition: width 0.25s ease; /* progress animation */
+}
+
+/* hover → underline progress */
+.nav-link:hover::before {
+    width: 100%;
+}
+
+/* active state */
+.nav-link.aktif {
+    font-weight: 600;
+}
+
+.nav-link.aktif::before {
+    width: 100%;
+}
+

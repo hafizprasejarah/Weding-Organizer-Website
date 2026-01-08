@@ -59,7 +59,7 @@
             <div class="w-[370px] h-[130px] bg-[#f6e7e9] rounded-[10px] shadow-lg flex items-center px-4 py-5 gap-2 border-3 border-transparent hover:border-[#ff9cb0] transition-all duration-300">
                 <div class="fa-solid fa-fan  text-[#C63D5C] text-[58px]"></div>
                 <div class="gap-6 flex flex-col">
-                    <h1 class="text-[22px] font-semibold text-[#C63D5C]">Beautiful Decorg</h1>
+                    <h1 class="text-[22px] font-semibold text-[#C63D5C]">Beautiful Decor</h1>
                     <p class="text-[15px] font-semibold">Elegant romantic & setup</p>
                 </div>
             </div>
@@ -107,37 +107,47 @@
                     View Gallery</button>
             </form>
         </section>
-        <section class="relative w-full h-screen overflow-hidden rounded-xl">
+
+        <section class="relative w-full h-[80vh] overflow-hidden">
 
             <!-- Background Image -->
             <img
-                src="<?= base_url('assets/wedding.jpg') ?>"
+                src="<?= base_url('assets/bunga.jpg') ?>"
                 alt=""
                 class="absolute inset-0 w-full h-full object-cover">
 
             <!-- Overlay Gradient -->
             <div class="absolute inset-0 bg-gradient-to-r 
-                from-[#c63d5c]/80 
-                via-[#ff7a9c]/50 
-                to-transparent">
+        from-[#c63d5c]/80 
+        via-[#ff7a9c]/50 
+        to-transparent">
             </div>
 
             <!-- Content -->
-            <div class="relative z-10 h-full flex flex-col gap-6 justify-center px-12 max-w-xl text-[#FFF5F7]">
-                <h1 class="logo-font text-[60px] leading-tight">
+            <div class="relative z-10 h-full flex flex-col justify-center p-12 text-[#FFF5F7] max-w-[720px]">
+                <h1 class="logo-font text-[52px] leading-tight font-medium">
                     Ready to Plan Your Dream Wedding?
                 </h1>
 
-                <p class="font-heading text-[20px] tracking-wide">
+                <p class="mt-4 font-heading text-[20px] tracking-wide">
                     Let's Make Your Day Unforgettable!
                 </p>
+
                 <button
-                    class=" px-6 py-3 w-fit text-[16px] rounded-[7px] font-bold text-[#bb2a55] bg-[linear-gradient(160deg,#FADADD,#F4B6C2)] hover:brightness-105 transition">
+                    class="mt-8 px-6 py-3 w-fit text-[16px] rounded-[7px] font-bold 
+                   text-[#bb2a55] 
+                   bg-[linear-gradient(160deg,#FADADD,#F4B6C2)] 
+                   hover:brightness-105 transition">
                     Book Your Consultation
                 </button>
             </div>
 
         </section>
+
+        <section class="h-[5vh] bg-[#f9cfd3]">
+
+        </section>
+
 
 
         <?= $this->include('layout/footer') ?>
