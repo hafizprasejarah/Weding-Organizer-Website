@@ -35,7 +35,7 @@
                         EXPERIENCE YOUR DREAM WEDDING WITH US
                     </p>
                     <button
-                        class="px-6 py-3 w-fit text-[16px] rounded-[7px] font-bold text-[#bb2a55] bg-[linear-gradient(160deg,#FADADD,#F4B6C2)] hover:brightness-105 transition">
+                        class="px-4 py-2 md:px-6 md:py-3 text-[14px] md:text-[16px] rounded-[7px] font-bold text-[#bb2a55] bg-[linear-gradient(160deg,#FADADD,#F4B6C2)] hover:brightness-105 transition">
                         Our Services
                     </button>
 
@@ -96,17 +96,17 @@
             <!-- card Photo -->
             <div class="flex flex-row gap-2 md:gap-5 relative z-10 w-full justify-center items-center py-10 px-6 md:px-12">
 
-                <div class="p-1 overflow-hidden bg-[#FFF5F7] h-40 w-1/2 relative">
+                <div class="p-1 overflow-hidden bg-[#FFF5F7] h-50 md:h-75 w-1/2 relative">
                     <img class="object-cover h-full w-full" src="<?= base_url('assets/jawa.jpg') ?>" alt="">
                 </div>
 
-                <div class="p-1 overflow-hidden bg-[#FFF5F7] h-40 w-1/2">
+                <div class="p-1 overflow-hidden bg-[#FFF5F7] h-50 md:h-75 w-1/2">
                     <img class="object-cover h-full w-full relative" src="<?= base_url('assets/sunda.jpg') ?>" alt="">
                 </div>
             </div>
 
             <form action="" class="relative z-10 flex w-full justify-center">
-                <button class="px-6 py-3 w-fit text-[16px] rounded-[7px] font-bold text-[#FFF5F7]  bg-[radial-gradient(circle_at_top,#C63D5C,#a3284d)] hover:brightness-110 transition">
+                <button class= "px-4 py-2 md:px-6 md:py-3 w-fit text-{14px} md:text-[16px] rounded-[7px] font-bold text-[#FFF5F7]  bg-[radial-gradient(circle_at_top,#C63D5C,#a3284d)] hover:brightness-110 transition">
                     View Gallery</button>
             </form>
         </section>
@@ -120,19 +120,16 @@
                 class="absolute inset-0 w-full h-full object-cover">
 
             <!-- Overlay Gradient -->
-            <div class="absolute inset-0 bg-gradient-to-r 
-        from-[#c63d5c]/80 
-        via-[#ff7a9c]/50 
-        to-transparent">
+            <div class="absolute inset-0 bg-gradient-to-r from-[#c63d5c]/80 via-[#ff7a9c]/50 to-transparent">
             </div>
 
             <!-- Content -->
-            <div class="relative z-10 h-full flex flex-col justify-center p-12 text-[#FFF5F7] max-w-[720px]">
-                <h1 class="logo-font text-[52px] leading-tight font-medium">
+            <div class="relative z-10 h-full flex flex-col justify-center p-6 md:p-12 items-center md:items-start text-[#FFF5F7] max-w-[720px]">
+                <h1 class="logo-font text-[40px] text-center md:text-start md:text-[48px] xl:text-[52px] leading-tight font-medium">
                     Ready to Plan Your Dream Wedding?
                 </h1>
 
-                <p class="mt-4 font-heading text-[20px] tracking-wide">
+                <p class="mt-4 font-heading sm:text-[16px]  md:text-[18px] xl:text-[20px]  text-center md:text-start tracking-wide">
                     Let's Make Your Day Unforgettable!
                 </p>
 
