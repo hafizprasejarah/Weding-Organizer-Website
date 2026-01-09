@@ -51,8 +51,8 @@
             <div class="w-full sm:w-[370px] sm:h-[130px] bg-[#f6e7e9] rounded-[10px] shadow-lg flex flex-col sm:flex-row items-center px-4 py-5 gap-10 sm:gap-2 border-3 border-transparent hover:border-[#ff9cb0] transition-all duration-300">
                 <div class="fa-regular fa-calendar-days text-[#C63D5C] text-[68px] sm:text-[48px] "></div>
                 <div class=" sm:gap-6 flex flex-col items-center sm:items-start">
-                    <h1 class="text-[20px] sm:text-[22px] font-semibold text-[#C63D5C]">Wedding Planing</h1>
-                    <p class="text-[12px] sm:text-[15px] font-semibold">Full planing & coordination</p>
+                    <h1 class="text-[20px] lg:text-[22px] font-semibold text-[#C63D5C]">Wedding Planing</h1>
+                    <p class="text-[12px] lg:text-[15px] font-semibold">Full planing & coordination</p>
                 </div>
             </div>
 
