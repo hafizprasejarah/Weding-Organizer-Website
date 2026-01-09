@@ -42,13 +42,13 @@ body {
 }
 
 .hero-section {
-    background-size: contain;
     background-repeat: no-repeat;
     background-size: 110%;
     background-position: -240% 60%;
-
     position: relative;
 }
+
+
 
 .hero-gradient {
     position: absolute;
@@ -86,6 +86,34 @@ body {
 
 }
 
+@media (max-width: 768px) {
+    .hero-section {
+        background-size: unset;
+        background-position: center 80%;
+    }
+
+    .hero-gradient {
+        background:
+
+            /* 🌸 Radial memenuhi layar, hilang di 40% ke atas */
+            radial-gradient(ellipse 400% 150% at bottom,
+                rgba(244, 182, 194, 0.95) 0%,
+                rgba(244, 182, 194, 0.75) 20%,
+                rgba(244, 182, 194, 0.4) 30%,
+                rgba(244, 182, 194, 0) 40%
+            ),
+
+            /* 🔴 Linear fokus bawah → atas */
+            linear-gradient(to top,
+                rgba(198, 61, 92, 0.95) 0%,
+                rgba(198, 61, 92, 0.85) 25%,
+                rgba(198, 61, 92, 0.55) 40%,
+                rgba(198, 61, 92, 0.2) 55%,
+                rgba(198, 61, 92, 0) 70%
+            );
+    }
+}
+
 .heading-underline {
     position: relative;
     display: inline-block;
@@ -113,26 +141,23 @@ body {
     text-decoration: none;
 }
 
-/* underline default (hidden) */
+
 .nav-link::before {
     content: "";
     position: absolute;
-    /* left: 50%; */
-    /* transform: translateX(-50%); */
-    bottom: -5px;                 /* jarak underline dari teks */
+    bottom: -5px;
     width: 0;
-    height: 1.2px;                  /* ketebalan underline */
+    height: 1.2px;
     background-color: #FFF5F7;
     border-radius: 999px;
-    transition: width 0.25s ease; /* progress animation */
+    transition: width 0.25s ease;
 }
 
-/* hover → underline progress */
 .nav-link:hover::before {
     width: 100%;
 }
 
-/* active state */
+
 .nav-link.aktif {
     font-weight: 600;
 }
@@ -140,4 +165,3 @@ body {
 .nav-link.aktif::before {
     width: 100%;
 }
-
