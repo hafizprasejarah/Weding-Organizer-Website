@@ -12,8 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 
-<body class="bg-[#C63D5C] w-full flex justify-center relative">
-    <div class="w-full max-w-[2100px] grid grid-cols-1 justify-center">
+<body class="bg-[#C63D5C] w-full flex justify-center relative ">
+    <div class="w-full max-w-525 grid grid-cols-1 justify-center">
         <!-- navbar section -->
         <section class="fixed top-0 left-0 w-full z-99"> <?= $this->include('layout/navbar') ?></section>
 

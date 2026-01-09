@@ -60,8 +60,8 @@
             <div class="w-full sm:w-[370px] sm:h-[130px] bg-[#f6e7e9] rounded-[10px] shadow-lg flex flex-col sm:flex-row items-center px-4 py-5 gap-10 sm:gap-2 border-3 border-transparent hover:border-[#ff9cb0] transition-all duration-300">
                 <div class="fa-regular fa-calendar-days text-[#C63D5C] text-[68px] sm:text-[48px] "></div>
                 <div class="sm:gap-6 flex flex-col items-center sm:items-start">
-                    <h1 class="text-[20px] sm:text-[22px] font-semibold text-[#C63D5C]">Beautiful Decor</h1>
-                    <p class="text-[12px] sm:text-[15px] font-semibold">Elegant romantic & setup</p>
+                    <h1 class="text-[20px] lg:text-[22px] font-semibold text-[#C63D5C]">Beautiful Decor</h1>
+                    <p class="text-[12px] lg:text-[15px] font-semibold">Elegant romantic & setup</p>
                 </div>
             </div>
 
@@ -69,8 +69,8 @@
             <div class="w-full sm:w-[370px] sm:h-[130px] bg-[#f6e7e9] rounded-[10px] shadow-lg flex flex-col sm:flex-row items-center px-4 py-5 gap-10 sm:gap-2 border-3 border-transparent hover:border-[#ff9cb0] transition-all duration-300">
                 <div class="fa-solid fa-camera-retro text-[#C63D5C] text-[68px] sm:text-[48px]"></div>
                 <div class="sm:gap-6 flex flex-col items-center sm:items-start">
-                    <h1 class="text-[20px] sm:text-[22px] font-semibold text-[#C63D5C]">Photo & Video</h1>
-                    <p class="text-[12px] sm:text-[15px] font-semibold">Capture your special moments</p>
+                    <h1 class="text-[20px] lg:text-[22px] font-semibold text-[#C63D5C]">Photo & Video</h1>
+                    <p class="text-[12px] lg:text-[15px] font-semibold">Capture your special moments</p>
                 </div>
             </div>
         </section>
@@ -134,12 +134,9 @@
                 </p>
 
                 <button
-                    class="mt-8 px-6 py-3 w-fit text-[16px] rounded-[7px] font-bold 
-                   text-[#bb2a55] 
-                   bg-[linear-gradient(160deg,#FADADD,#F4B6C2)] 
-                   hover:brightness-105 transition">
+                    class="mt-8 px-4 py-2 md:px-6 md:py-3 w-fit text-[16px] rounded-[7px] font-bold text-[#bb2a55] bg-[linear-gradient(160deg,#FADADD,#F4B6C2)] hover:brightness-105 transition">
                     Book Your Consultation
-                </button>
+                </button>s
             </div>
 
         </section>
