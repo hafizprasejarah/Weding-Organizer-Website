@@ -81,25 +81,26 @@
             <div class="absolute bg-[#f9cfd3] bottom-0 left-0 h-[30%] w-full">
             </div>
 
-            <div class="flex text-[#FFF5F7] flex-row items-center px-12 w-full z-10 relative">
-                <div class="border rounded-[5px] border-[#FFF5F7] w-[30%]"></div>
-                <h1 class="logo-font text-center text-[60px] font-medium w-[40%] [text-shadow:0_3px_8px_rgba(0,0,0,0.5)]">Our Love Stories</h1>
-                <div class="border rounded-[5px] border-[#FFF5F7] w-[30%]"></div>
+            <div class="flex text-[#FFF5F7] flex-row items-center px-6 md:px-12 w-full z-10 relative">
+                <div class="hidden sm:block border rounded-[5px] border-[#FFF5F7] w-[30%]"></div>
+                <h1 class="logo-font text-center text-[40px] xl:text-[60px] lg:text-[50px] md:text-[40px] font-medium w-[100%] sm:w-[40%] [text-shadow:0_3px_8px_rgba(0,0,0,0.5)]">Our Love Stories</h1>
+                <div class="hidden sm:block border rounded-[5px] border-[#FFF5F7] w-[30%]"></div>
             </div>
+            
             <div class="text-center z-10">
-                <p class="text-[#FFF5F7]  text-[25px] font-medium font-heading heading-underline [text-shadow:0_3px_8px_rgba(0,0,0,0.5)]">
+                <p class="text-[#FFF5F7] text-[14px] md:text-[15px]  xl:text-[25px] lg:text-[20px] font-medium font-heading heading-underline [text-shadow:0_3px_8px_rgba(0,0,0,0.5)]">
                     Unforgettable Weddings
                 </p>
             </div>
 
             <!-- card Photo -->
-            <div class="flex flex-row gap-5 relative z-10 w-full justify-center items-center py-10  px-12">
+            <div class="flex flex-row gap-2 md:gap-5 relative z-10 w-full justify-center items-center py-10 px-6 md:px-12">
 
-                <div class="p-1 overflow-hidden bg-[#FFF5F7] h-75 w-1/2 relative">
+                <div class="p-1 overflow-hidden bg-[#FFF5F7] h-40 w-1/2 relative">
                     <img class="object-cover h-full w-full" src="<?= base_url('assets/jawa.jpg') ?>" alt="">
                 </div>
 
-                <div class="p-1 overflow-hidden bg-[#FFF5F7] h-75 w-1/2">
+                <div class="p-1 overflow-hidden bg-[#FFF5F7] h-40 w-1/2">
                     <img class="object-cover h-full w-full relative" src="<?= base_url('assets/sunda.jpg') ?>" alt="">
                 </div>
             </div>
@@ -147,10 +148,8 @@
         </section>
 
         <section class="h-[5vh] bg-[#f9cfd3]">
-
+    
         </section>
-
-
 
         <?= $this->include('layout/footer') ?>
     </div>
