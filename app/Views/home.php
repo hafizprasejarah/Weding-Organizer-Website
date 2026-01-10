@@ -136,7 +136,7 @@
                 <button
                     class="mt-8 px-4 py-2 md:px-6 md:py-3 w-fit text-[16px] rounded-[7px] font-bold text-[#bb2a55] bg-[linear-gradient(160deg,#FADADD,#F4B6C2)] hover:brightness-105 transition">
                     Book Your Consultation
-                </button>s
+                </button>
             </div>
 
         </section>

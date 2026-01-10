@@ -17,40 +17,72 @@
         <!-- navbar section -->
         <section class="fixed top-0 left-0 w-full z-99"> <?= $this->include('layout/navbar') ?></section>
 
-        <section class="pt-[12rem] flex flex-col justify-center items-center bg-cover">
+        <section class="py-25 bg-gradient-to-b from-[#fdecef] to-[#f8cfd6]">
+            <div class="max-w-6xl mx-auto px-6">
 
-            <h1 class=" logo-font text-center text-[40px] xl:text-[60px] lg:text-[50px] md:text-[40px] font-medium w-[100%] sm:w-[40%] [text-shadow:0_3px_8px_rgba(0,0,0,0.5) text-[#C63D5C]">Our Services</h1>
 
+                <h2 class="text-center logo-font text-[#b43b5c] text-[40px]  md:text-[48px] xl:text-[52px] mb-12">
+                    Our Services
+                </h2>
+
+                <!-- Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                    <!-- Card 1 -->
+                    <div class="relative rounded-[20px] overflow-hidden shadow-lg group">
+                        <img src="<?= base_url('assets/planning.jpg') ?>"
+                            class="w-full h-[420px] object-cover group-hover:scale-105 transition duration-500">
+
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#b43b5c]/80 via-[#b43b5c]/30 to-transparent"></div>
+
+                        <div class="absolute bottom-0 p-6 text-white">
+                            <h3 class="text-[22px] font-serif mb-2">
+                                Wedding Planning
+                            </h3>
+                            <p class="text-sm opacity-90">
+                                Full planning & coordination for your special day.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="relative rounded-[20px] overflow-hidden shadow-lg group">
+                        <img src="<?= base_url('assets/decoration.jpg') ?>"
+                            class="w-full h-[420px] object-cover group-hover:scale-105 transition duration-500">
+
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#b43b5c]/80 via-[#b43b5c]/30 to-transparent"></div>
+
+                        <div class="absolute bottom-0 p-6 text-white">
+                            <h3 class="text-[22px] font-serif mb-2">
+                                Beautiful Decor
+                            </h3>
+                            <p class="text-sm opacity-90">
+                                Elegant and romantic setup for ceremony & reception.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="relative rounded-[20px] overflow-hidden shadow-lg group">
+                        <img src="<?= base_url('assets/fotografi.webp') ?>"
+                            class="w-full h-[420px] object-cover group-hover:scale-105 transition duration-500">
+
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#b43b5c]/80 via-[#b43b5c]/30 to-transparent"></div>
+
+                        <div class="absolute bottom-0 p-6 text-white">
+                            <h3 class="text-[22px] font-serif mb-2">
+                                Photo & Video
+                            </h3>
+                            <p class="text-sm opacity-90">
+                                Capturing your love story with stunning visuals.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </section>
 
-        <section class=" bg-[#f9cfd3]  flex flex-col md:flex-row justify-center items-center gap-4 sm:gap-2 p-[20px] py-15">
-            <!-- cards -->
-            <div class="w-full sm:w-[370px] sm:h-[330px] bg-[#f6e7e9] rounded-[10px] shadow-lg flex flex-col sm:flex-row items-center px-4 py-5 gap-10 sm:gap-2 border-3 border-transparent hover:border-[#ff9cb0] transition-all duration-300">
-                <div class="fa-regular fa-calendar-days text-[#C63D5C] text-[68px] sm:text-[48px] "></div>
-                <div class=" sm:gap-6 flex flex-col items-center sm:items-start">
-                    <h1 class="text-[20px] lg:text-[22px] font-semibold text-[#C63D5C]">Wedding Planing</h1>
-                    <p class="text-[12px] lg:text-[15px] font-semibold">Full planing & coordination</p>
-                </div>
-            </div>
-
-            <!-- cards -->
-            <div class="w-full sm:w-[370px] sm:h-[330px] bg-[#f6e7e9] rounded-[10px] shadow-lg flex flex-col sm:flex-row items-center px-4 py-5 gap-10 sm:gap-2 border-3 border-transparent hover:border-[#ff9cb0] transition-all duration-300">
-                <div class="fa-regular fa-calendar-days text-[#C63D5C] text-[68px] sm:text-[48px] "></div>
-                <div class="sm:gap-6 flex flex-col items-center sm:items-start">
-                    <h1 class="text-[20px] lg:text-[22px] font-semibold text-[#C63D5C]">Beautiful Decor</h1>
-                    <p class="text-[12px] lg:text-[15px] font-semibold">Elegant romantic & setup</p>
-                </div>
-            </div>
-
-            <!-- cards -->
-            <div class="w-full sm:w-[370px] sm:h-[330px] bg-[#f6e7e9] rounded-[10px] shadow-lg flex flex-col sm:flex-row items-center px-4 py-5 gap-10 sm:gap-2 border-3 border-transparent hover:border-[#ff9cb0] transition-all duration-300">
-                <div class="fa-solid fa-camera-retro text-[#C63D5C] text-[68px] sm:text-[48px]"></div>
-                <div class="sm:gap-6 flex flex-col items-center sm:items-start">
-                    <h1 class="text-[20px] lg:text-[22px] font-semibold text-[#C63D5C]">Photo & Video</h1>
-                    <p class="text-[12px] lg:text-[15px] font-semibold">Capture your special moments</p>
-                </div>
-            </div>
-        </section>
 
 
 
