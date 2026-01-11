@@ -75,7 +75,7 @@
                                         <?= esc($booking['package_id']) ?>
                                     </td>
                                     <td class="py-3 font-semibold
-                    <?= $booking['status'] === 'confirmed'
+                                    <?= $booking['status'] === 'confirmed'
                                     ? 'text-green-600'
                                     : 'text-yellow-600' ?>">
                                         <?= esc(ucfirst($booking['status'])) ?>
@@ -92,7 +92,6 @@
                     </tbody>
 
                 </table>
-
 
             </div>
 

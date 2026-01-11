@@ -17,6 +17,7 @@ $routes->get('/admin/login', 'LoginController::Index');
 $routes->post('/admin/login/user', 'LoginController::login');
 
 $routes->group('admin', ['filter' => 'AdminAuth'], function ($routes) {
-    $routes->get('dashboard', 'AdminDashboardController::index');
     $routes->get('logout', 'LoginController::logout');
+    $routes->get('dashboard', 'AdminDashboardController::index');
+    $routes->get('package', 'PackageController::index');
 });
