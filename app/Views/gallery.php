@@ -33,57 +33,32 @@
             <!-- Gallery Grid -->
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 
-
-                    <div class="relative rounded-[18px] overflow-hidden shadow-md group">
-                        <img src="<?= base_url('assets/planning.jpg') ?>"
-                             class="w-full h-[280px] object-cover group-hover:scale-110 transition duration-500">
-
-                        <!-- Overlay -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#b43b5c]/70 via-[#b43b5c]/20 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
-                    </div>
-
-                    <div class="relative rounded-[18px] overflow-hidden shadow-md group">
-                        <img src="<?= base_url('assets/planning.jpg') ?>"
-                             class="w-full h-[280px] object-cover group-hover:scale-110 transition duration-500">
-
-                        <!-- Overlay -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#b43b5c]/70 via-[#b43b5c]/20 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
-                    </div>
-
-                    <div class="relative rounded-[18px] overflow-hidden shadow-md group">
-                        <img src="<?= base_url('assets/planning.jpg') ?>"
-                             class="w-full h-[280px] object-cover group-hover:scale-110 transition duration-500">
-
-                        <!-- Overlay -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#b43b5c]/70 via-[#b43b5c]/20 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
-                    </div>
-
-                    <div class="relative rounded-[18px] overflow-hidden shadow-md group">
-                        <img src="<?= base_url('assets/planning.jpg') ?>"
-                             class="w-full h-[280px] object-cover group-hover:scale-110 transition duration-500">
-
-                        <!-- Overlay -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#b43b5c]/70 via-[#b43b5c]/20 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
-                    </div>
+                <?php foreach ($gallery as $item): ?>
 
                     <div class="relative rounded-[18px] overflow-hidden shadow-md group">
                         <img src="<?= base_url('assets/bunga.jpg') ?>"
-                             class="w-full h-[280px] object-cover group-hover:scale-110 transition duration-500">
+                            class="w-full h-[280px] object-cover group-hover:scale-110 transition duration-500">
 
                         <!-- Overlay -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#b43b5c]/70 via-[#b43b5c]/20 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#b43b5c]/70 via-[#b43b5c]/20 to-transparent opacity-0 group-hover:opacity-100 transition">
+                            <div class="absolute bottom-0 p-6 text-white">
+                                <h3 class="text-[22px] font-serif mb-2">
+                                    Wedding Planning
+                                </h3>
+                                <p class="text-sm opacity-90">
+                                    Full planning & coordination for your special day.
+                                </p>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="relative rounded-[18px] overflow-hidden shadow-md group">
-                        <img src="<?= base_url('assets/jawa.jpg') ?>"
-                             class="w-full h-[280px] object-cover group-hover:scale-110 transition duration-500">
-
-                        <!-- Overlay -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#b43b5c]/70 via-[#b43b5c]/20 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
-                    </div>
+                <?php endforeach; ?> 
 
             </div>
 
+            <!-- Pagination -->
+            <div class="mt-16 flex justify-center">
+                <?= $pager->links('gallery', 'tailwind_pagination') ?>
+            </div>
 
         </div>
     </section>

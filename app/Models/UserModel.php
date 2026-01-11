@@ -18,6 +18,6 @@ class UserModel extends Model
         'is_active',
         'last_login'
     ];
-
+    
     protected $useTimestamps = true;
 }

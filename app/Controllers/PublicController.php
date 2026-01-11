@@ -27,8 +27,8 @@ class PublicController extends BaseController
         $data = [
             'title' => 'gallery',
             'gallery' => $model
-            ->orderBy('created_at', 'DESC')
-            ->paginate(8, 'gallery'),
+                ->orderBy('created_at', 'DESC')
+                ->paginate(8, 'gallery'),
             'pager'   => $model->pager,
         ];
 
@@ -38,8 +38,23 @@ class PublicController extends BaseController
     public function packages(): string
     {
 
-        return view('packages', [
-            'title' => 'packages'
+        return view('package', [
+            'title' => 'package'
+        ]);
+    }
+
+    public function contact(): string
+    {
+
+        return view('contact', [
+            'title' => 'contact'
+        ]);
+    }
+    public function book_now(): string
+    {
+
+        return view('book_now', [
+            'title' => 'contact'
         ]);
     }
 }

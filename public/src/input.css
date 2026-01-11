@@ -41,6 +41,11 @@ body {
     font-family: "Dancing Script", cursive;
 }
 
+.masonry {
+  display: grid;
+  grid-auto-rows: 10px;
+}
+
 .hero-section {
     background-repeat: no-repeat;
     background-size: 110%;
