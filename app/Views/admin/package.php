@@ -12,18 +12,33 @@
 
 <body class="bg-gray-100 font-[Montserrat]">
 
-    <div class="flex min-h-screen">
+    <div class="flex min-h-screen ">
 
         <!-- Sidebar -->
         <?= $this->include('admin/layout/navbar') ?>
         <!-- Content -->
-        <main class="flex-1 p-8">
+        <main class="flex-1 p-8 relative">
+
+            <?php if (session()->getFlashdata('error')) : ?>
+                <div class="absolute left-0 right-0 top-0 mb-6 p-4 rounded-lg bg-red-100 text-red-700 border border-red-300">
+                    <?= session()->getFlashdata('error') ?>
+                </div>
+            <?php endif; ?>
+
+            <?php if (session()->getFlashdata('success')) : ?>
+                <div class="absolute left-0 right-0 top-0 mb-6 p-4 rounded-lg bg-green-100 text-green-700 border border-green-300">
+                    <?= session()->getFlashdata('success') ?>
+                </div>
+            <?php endif; ?>
+
 
             <div class="flex justify-between items-center mb-6">
                 <h1 class="text-3xl font-bold text-gray-700">Kelola Paket</h1>
-                <button class="px-5 py-3 rounded-lg bg-[#b43b5c] text-white hover:bg-[#9f334f] transition">
-                    + Tambah Paket
-                </button>
+                <a href="<?= base_url('admin/packages/tambah') ?>">
+                    <button class="px-5 py-3 rounded-lg bg-[#b43b5c] text-white hover:bg-[#9f334f] transition">
+                        + Tambah Paket
+                    </button>
+                </a>
             </div>
 
             <div class="bg-white rounded-xl shadow p-6">
@@ -41,35 +56,35 @@
                         <?php if (!empty($packages)) : ?>
                             <?php foreach ($packages as $package) : ?>
 
+                                <tr class="border-b">
+                                    <td class="py-3 font-semibold">
+                                        <?= esc($package['name']) ?>
+                                    </td>
+
+                                    <td class="py-3">
+                                        <?= 'Rp ' . number_format($package['price'], 0, ',', '.') ?>
+                                    </td>
+
+                                    <td class="py-3">
+
+                                        <?= esc($package['description']) . '...' ?>
+
+                                    </td>
+
+                                    <td class="py-3 text-center space-x-2">
+                                        <a href="<?= base_url('admin/package/edit/' . $package['id']) ?>"
+                                            class="px-3 py-1 rounded bg-blue-500 text-white text-sm">
+                                            Edit
+                                        </a>
+
+                                        <a href="<?= base_url('admin/package/delete/' . $package['id']) ?>"
+                                            onclick="return confirm('Yakin hapus paket ini?')"
+                                            class="px-3 py-1 rounded bg-red-500 text-white text-sm">
+                                            Hapus
+                                        </a>
+                                    </td>
+                                </tr>
                             <?php endforeach ?>
-                            <tr class="border-b">
-                                <td class="py-3 font-semibold">
-                                    <?= esc($package['name']) ?>
-                                </td>
-
-                                <td class="py-3">
-                                    <?= 'Rp ' . number_format($package['price'], 0, ',', '.') ?>
-                                </td>
-
-                                <td class="py-3">
-
-                                    <?= esc($package['description']) . '...' ?>
-
-                                </td>
-
-                                <td class="py-3 text-center space-x-2">
-                                    <a href="<?= base_url('admin/package/edit/' . $package['id']) ?>"
-                                        class="px-3 py-1 rounded bg-blue-500 text-white text-sm">
-                                        Edit
-                                    </a>
-
-                                    <a href="<?= base_url('admin/package/delete/' . $package['id']) ?>"
-                                        onclick="return confirm('Yakin hapus paket ini?')"
-                                        class="px-3 py-1 rounded bg-red-500 text-white text-sm">
-                                        Hapus
-                                    </a>
-                                </td>
-                            </tr>
                         <?php else : ?>
                             <tr>
                                 <td colspan="4" class="py-6 text-center text-gray-500">

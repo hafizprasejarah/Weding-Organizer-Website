@@ -15,35 +15,37 @@
             Tambah Paket
         </h1>
 
-        <form action="<?= base_url('admin/package/store') ?>" method="post">
+        <form action="<?= base_url('admin/package/update/' . $package['id']) ?>" method="post">
+
             <?= csrf_field() ?>
 
-        
             <div class="mb-4">
                 <label class="block text-gray-600 mb-2">Nama Paket</label>
-                <input type="text" name="name" required
+                <input type="text" name="name" required value="<?= $package['name'] ?>"
                     class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring">
             </div>
 
-        
+
             <div class="mb-4">
                 <label class="block text-gray-600 mb-2">Harga</label>
-                <input type="number" name="price" required
+                <input type="number" name="price" required value="<?= $package['price'] ?>"
                     class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring">
             </div>
 
-  
+
             <div class="mb-4">
                 <label class="block text-gray-600 mb-2">
                     Deskripsi Paket
                 </label>
-                
 
-                <div id="description-wrapper" class="space-y-2">
-                    <input type="text" name="description[]"
-                        class="w-full border rounded-lg px-4 py-2"
-                        placeholder="Contoh: Foto prewedding">
-                </div>
+                <?php foreach ($package['description'] as $description) : ?>
+
+                    <div id="description-wrapper" class="space-y-2">
+                        <input type="text" name="description[]" value="<?= $description ?>"
+                            class="w-full border rounded-lg px-4 py-2"
+                            placeholder="Contoh: Foto prewedding">
+                    </div>
+                <?php endforeach ?>
 
                 <button type="button"
                     onclick="addDescription()"
