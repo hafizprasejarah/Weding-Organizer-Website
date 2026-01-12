@@ -101,5 +101,19 @@ class PackageController extends BaseController
             ->with('success', 'Paket berhasil diperbarui');
     }
 
-    public function delete($id) {}
+    public function delete($id)
+    {
+        $packageModel = new PackageModel();
+
+        $package = $packageModel->find($id);
+        
+        if (!$package) {
+            return redirect()->back()->with('error', 'Paket tidak ditemukan');
+        }
+
+        $packageModel->delete($id);
+
+        return redirect()->to('/admin/package')
+            ->with('success', 'Paket berhasil dihapus');
+    }
 }

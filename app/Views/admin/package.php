@@ -72,16 +72,19 @@
                                     </td>
 
                                     <td class="py-3 text-center space-x-2">
-                                        <a href="<?= base_url('admin/package/edit/' . $package['id']) ?>"
+                                        <a href="<?= base_url(relativePath: 'admin/package/edit/' . $package['id']) ?>"
                                             class="px-3 py-1 rounded bg-blue-500 text-white text-sm">
                                             Edit
                                         </a>
 
-                                        <a href="<?= base_url('admin/package/delete/' . $package['id']) ?>"
-                                            onclick="return confirm('Yakin hapus paket ini?')"
-                                            class="px-3 py-1 rounded bg-red-500 text-white text-sm">
-                                            Hapus
-                                        </a>
+                                        <form action="<?= base_url('admin/package/delete/' . $package['id']) ?>" method="post" class="inline">
+                                            <?= csrf_field() ?>
+                                            <button type="submit"
+                                                onclick="return confirm('Yakin hapus paket ini?')"
+                                                class="px-3 py-1 rounded bg-red-500 text-white text-sm">
+                                                Hapus
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
                             <?php endforeach ?>

@@ -24,5 +24,7 @@ $routes->group('admin', ['filter' => 'AdminAuth'], function ($routes) {
     $routes->get('packages/tambah', 'PackageController::tambhaview');
     $routes->post('package/store', 'PackageController::tambahlogic');
     $routes->get('package/edit/(:num)', 'PackageController::edit/$1');
-    $routes->post('package/update/(:num)', 'PackageController::update/$1');
+
+
+    $routes->post('package/delete/(:num)', 'PackageController::delete/$1');
 });
