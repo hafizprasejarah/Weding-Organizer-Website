@@ -38,14 +38,13 @@
                     Deskripsi Paket
                 </label>
 
+                <div id="description-wrapper" class="space-y-2">
                 <?php foreach ($package['description'] as $description) : ?>
-
-                    <div id="description-wrapper" class="space-y-2">
-                        <input type="text" name="description[]" value="<?= $description ?>"
+                    <input type="text" name="description[]" value="<?= $description ?>"
                             class="w-full border rounded-lg px-4 py-2"
                             placeholder="Contoh: Foto prewedding">
-                    </div>
                 <?php endforeach ?>
+                </div>
 
                 <button type="button"
                     onclick="addDescription()"
@@ -53,7 +52,6 @@
                     + Tambah Deskripsi
                 </button>
             </div>
-
 
             <div class="flex justify-end">
                 <button type="submit"

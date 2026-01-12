@@ -70,7 +70,6 @@ class PackageController extends BaseController
 
     public function edit($id)
     {
-
         $packageModel = new PackageModel();
         $package = $packageModel->find($id);
 
@@ -101,4 +100,6 @@ class PackageController extends BaseController
         return redirect()->to('/admin/package')
             ->with('success', 'Paket berhasil diperbarui');
     }
+
+    public function delete($id) {}
 }
