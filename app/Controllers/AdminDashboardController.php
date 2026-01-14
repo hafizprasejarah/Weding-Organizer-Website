@@ -23,6 +23,7 @@ class AdminDashboardController extends BaseController
         $bookingModel = new BookingModel();
 
         $data = [
+            'titles' => 'dashboard',
             'total_booking' => $bookingModel->countAllResults(), 
             'total_service' => $serviceModel->countAllResults(),
             'total_gallery' => $galleryModel->countAllResults(),

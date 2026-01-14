@@ -17,14 +17,13 @@
         <!-- Sidebar -->
         <?= $this->include('admin/layout/navbar') ?>
 
-        <!-- Main Content -->
+   
         <main class="flex-1 p-8">
-
             <h1 class="text-3xl font-bold text-gray-700 mb-8">
                 Dashboard
             </h1>
 
-            <!-- Stats -->
+
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
                 <div class="bg-white p-6 rounded-xl shadow">
                     <p class="text-sm text-gray-500">Total Booking</p>
