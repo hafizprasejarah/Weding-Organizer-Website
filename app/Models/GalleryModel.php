@@ -8,19 +8,15 @@ class GalleryModel extends Model
 {
     protected $table            = 'gallery';
     protected $primaryKey       = 'id';
-
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
 
     protected $allowedFields    = [
         'image',
         'category',
-        'status',
-        'created_at',
+        'description',
+
     ];
 
     protected $useTimestamps = true;
-    protected $createdField  = 'created_at';
-    protected $updatedField  = null;
-
 }

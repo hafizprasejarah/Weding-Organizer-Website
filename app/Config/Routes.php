@@ -30,4 +30,7 @@ $routes->group('admin', ['filter' => 'AdminAuth'], function ($routes) {
     // kelola gallery
     $routes->get('gallery', 'GalleryController::index');
     $routes->get('gallery/tambah', 'GalleryController::tambhaview');
+    $routes->post('gallery/store', 'GalleryController::save');
+    $routes->get('gallery/edit/(:num)', 'GalleryController::edit/$1');
+    $routes->get('gallery/tambah', 'GalleryController::tambhaview');
 });
