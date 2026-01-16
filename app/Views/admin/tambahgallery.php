@@ -38,10 +38,11 @@
                 </label>
 
                 <div id="description-wrapper" class="space-y-2">
-                    <input type="file" name="gambar" accept="image/png, image/jpeg, image/gif"
+                    <input type="file" required name="gambar" accept="image/png, image/jpeg, image/gif"
                         class="w-full border rounded-lg px-4 py-2"
                         placeholder="Contoh: Foto prewedding">
                 </div>
+                
             </div>
 
             <div class="flex justify-end">
@@ -54,19 +55,7 @@
         </form>
     </div>
 
-    <script>
-        function addDescription() {
-            const wrapper = document.getElementById('description-wrapper');
 
-            const input = document.createElement('input');
-            input.type = 'text';
-            input.name = 'description[]';
-            input.placeholder = 'Contoh: Video cinematic';
-            input.className = 'w-full border rounded-lg px-4 py-2';
-
-            wrapper.appendChild(input);
-        }
-    </script>
 
 </body>
 

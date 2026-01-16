@@ -15,18 +15,8 @@
     <div class="flex min-h-screen">
 
         <!-- Sidebar -->
-        <aside class="w-64 bg-[#b43b5c] text-white flex flex-col">
-            <div class="p-6 text-2xl font-bold border-b border-white/20">
-                Admin Panel
-            </div>
-
-            <nav class="flex-1 p-4 space-y-3">
-                <a href="<?= base_url('admin/dashboard') ?>" class="block px-4 py-2 rounded-lg hover:bg-white/20">Dashboard</a>
-                <a href="<?= base_url('admin/package') ?>" class="block px-4 py-2 rounded-lg hover:bg-white/20">Kelola Paket</a>
-                <a href="<?= base_url('admin/gallery') ?>" class="block px-4 py-2 rounded-lg bg-white/20">Kelola Gallery</a>
-                <a href="<?= base_url('admin/booking') ?>" class="block px-4 py-2 rounded-lg hover:bg-white/20">Booking</a>
-            </nav>
-        </aside>
+        <!-- Sidebar -->
+        <?= $this->include('admin/layout/navbar') ?>
 
         <!-- Content -->
         <main class="flex-1 p-8">
@@ -42,25 +32,65 @@
             </div>
 
             <!-- Gallery Grid -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 
-                <div class="bg-white rounded-xl shadow overflow-hidden">
-                    <img src="<?= base_url('assets/planning.jpg') ?>" class="w-full h-40 object-cover">
-                    <div class="p-4 flex justify-between">
-                        <span class="text-sm text-gray-600">planning.jpg</span>
-                        <div class="space-x-2">
-                            <button class="text-blue-500 text-sm">Edit</button>
-                            <button class="text-red-500 text-sm">Hapus</button>
+                <?php if (!empty($gallery)) : ?>
+                    <?php foreach ($gallery as $item) : ?>
+
+                        <div class="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden group">
+
+                            <!-- Image -->
+                            <div class="relative">
+                                <img
+                                    src="<?= base_url('uploads/gallery/' . esc($item['image'])) ?>"
+                                    class="w-full h-48 object-cover">
+
+                                <!-- Hover Actions -->
+                                <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                                    <div class="space-x-3">
+                                        <a href="<?= base_url('admin/gallery/edit/' . $item['id']) ?>"
+                                            class="px-3 py-1 bg-blue-500 text-white text-sm rounded">
+                                            Edit
+                                        </a>
+                                        <a href="<?= base_url('admin/gallery/delete/' . $item['id']) ?>"
+                                            onclick="return confirm('Yakin hapus foto ini?')"
+                                            class="px-3 py-1 bg-red-500 text-white text-sm rounded">
+                                            Hapus
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Content -->
+                            <div class="p-4">
+                                <span class="text-xs uppercase text-[#b43b5c] font-semibold">
+                                    <?= esc($item['category']) ?>
+                                </span>
+
+                                <p class="mt-2 text-sm text-gray-600 line-clamp-3">
+                                    <?= esc($item['description']) ?>
+                                </p>
+
+                                <p class="mt-3 text-xs text-gray-400">
+                                    <?= date('d M Y', strtotime($item['created_at'])) ?>
+                                </p>
+                            </div>
+
                         </div>
+
+                    <?php endforeach; ?>
+                <?php else : ?>
+                    <div class="col-span-full text-center text-gray-500 py-10">
+                        Belum ada data gallery
                     </div>
-                    <div class="p-4">
-                        <h3 class="text-[20px] font-semibold">dsankdawukdnsa kdnasudhwda</h3>
-                        <p class="py-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores adipisci eos enim sint dignissimos quos molestiae voluptatum reiciendis rem eum!</p>
-                    </div>
-                </div>
+                <?php endif; ?>
 
             </div>
 
+            <div class="mt-10 flex justify-center">
+                <?= $pager->links() ?>
+            </div>
         </main>
 
     </div>

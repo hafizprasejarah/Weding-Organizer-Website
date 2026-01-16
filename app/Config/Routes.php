@@ -25,12 +25,13 @@ $routes->group('admin', ['filter' => 'AdminAuth'], function ($routes) {
     $routes->get('packages/tambah', 'PackageController::tambhaview');
     $routes->post('package/store', 'PackageController::tambahlogic');
     $routes->get('package/edit/(:num)', 'PackageController::edit/$1');
+    $routes->post('package/update/(:num)', 'PackageController::update/$1');
     $routes->post('package/delete/(:num)', 'PackageController::delete/$1');
-
     // kelola gallery
     $routes->get('gallery', 'GalleryController::index');
     $routes->get('gallery/tambah', 'GalleryController::tambhaview');
     $routes->post('gallery/store', 'GalleryController::save');
     $routes->get('gallery/edit/(:num)', 'GalleryController::edit/$1');
-    $routes->get('gallery/tambah', 'GalleryController::tambhaview');
+    $routes->post('gallery/update/(:num)', 'GalleryController::update/$1');
+    $routes->get('gallery/delete/(:num)', 'GalleryController::delete/$1');
 });
