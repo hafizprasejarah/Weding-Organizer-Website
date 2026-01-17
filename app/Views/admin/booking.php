@@ -56,27 +56,32 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <?php foreach ($bookings as $booking) : ?>
+                            <tr class="border-b">
+                                <td class="py-3"><?= $booking['name'] ?></td>
+                                <td class="py-3"><?= $booking['email'] ?></td>
+                                <td class="py-3"><?= $booking['wedding_date'] ?></td>
+                                <td class="py-3"><?= $booking['package_name'] ?></td>
+                                <td class="py-3">
+                                    <span class="px-3 py-1 rounded-full bg-yellow-100 text-yellow-700 text-sm">
+                                        <?= $booking['status'] ?>
+                                    </span>
+                                </td>
+                                <td class="py-3 text-center space-x-2">
+                                    <a href="<?= base_url('admin/booking/confirm/' . $booking['id']) ?>"
+                                        <button class="px-3 py-1 rounded bg-green-500 text-white text-sm">
+                                        Confirm
+                                        </button>
+                                    </a>
+                                    <a href="<?= base_url('admin/booking/cancel/' . $booking['id']) ?>">
+                                        <button class="px-3 py-1 rounded bg-red-500 text-white text-sm">
+                                            Reject
+                                        </button>
+                                    </a>
+                                </td>
+                            </tr>
 
-                        <tr class="border-b">
-                            <td class="py-3">Alya & Dimas</td>
-                            <td class="py-3">alya@mail.com</td>
-                            <td class="py-3">12-08-2026</td>
-                            <td class="py-3">Gold</td>
-                            <td class="py-3">
-                                <span class="px-3 py-1 rounded-full bg-yellow-100 text-yellow-700 text-sm">
-                                    Pending
-                                </span>
-                            </td>
-                            <td class="py-3 text-center space-x-2">
-                                <button class="px-3 py-1 rounded bg-green-500 text-white text-sm">
-                                    Confirm
-                                </button>
-                                <button class="px-3 py-1 rounded bg-red-500 text-white text-sm">
-                                    Reject
-                                </button>
-                            </td>
-                        </tr>
-
+                        <?php endforeach ?>
                     </tbody>
                 </table>
             </div>

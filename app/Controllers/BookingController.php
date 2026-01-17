@@ -13,15 +13,33 @@ class BookingController extends BaseController
         $model = new BookingModel();
         $status = $this->request->getGet('status'); // read | unread
 
-        if (in_array($status, ['pending', 'confirmed','canceled'])) {
+        if (in_array($status, ['pending', 'confirmed', 'canceled'])) {
             $model->where('status', $status);
         }
 
+        $bookings =  $model->select('bookings.*, packages.name AS package_name')
+            ->join('packages', 'packages.id = bookings.package_id')
+            ->orderBy('created_at', 'DESC')
+            ->findAll();
+
         return view('admin/booking', [
             'title'    => 'bookings',
-            'bookings' => $model
-                ->orderBy('created_at', 'DESC')
-                ->findAll()
+            'bookings' => $bookings
         ]);
+    }
+
+    public function confirm($id)
+    {
+        $model = new BookingModel();
+        $model->update(id: $id, row: ['status' => 'confirmed']);
+
+        return $model->update(id: $id, row: ['status' => 'confirmed']);
+    }
+    public function cancel($id)
+    {
+        $model = new BookingModel();
+        $model->update(id: $id, row: ['status' => 'confirmed']);
+
+        return $model->update(id: $id, row: ['status' => 'confirmed']);
     }
 }

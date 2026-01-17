@@ -38,10 +38,11 @@ $routes->group('admin', ['filter' => 'AdminAuth'], function ($routes) {
     $routes->get('gallery/delete/(:num)', 'GalleryController::delete/$1');
 
     $routes->get('booking', 'BookingController::index');
+    $routes->get('booking/confirm/(:num)', 'BookingController::confirm/$1');
+    $routes->get('booking/cancel/(:num)', 'BookingController::cancel/$1');
 
     //kelola contact
     $routes->get('contact', 'ContactController::index');
-
     $routes->get('contact/(:num)', 'ContactController::show/$1');
     $routes->get('contact/delete/(:num)', 'ContactController::delete/$1');
 });
