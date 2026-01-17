@@ -2,7 +2,10 @@
 
 namespace App\Controllers;
 
+use App\Models\BookingModel;
+use App\Models\ContactModel;
 use App\Models\GalleryModel;
+use App\Models\PackageModel;
 
 class PublicController extends BaseController
 {
@@ -34,6 +37,36 @@ class PublicController extends BaseController
 
         return view('gallery', $data);
     }
+    public function submit()
+    {
+        $model = new ContactModel();
+        $ip    = $this->request->getIPAddress();
+
+        $count = $model->where('ip_address', value: $ip)
+            ->where('created_at >=', date('Y-m-d H:i:s', strtotime('-1 hour')))
+            ->countAllResults();
+
+        if ($count >= 3) {
+            return $this->response->setJSON([
+                'status'  => 'error',
+                'message' => 'Terlalu banyak pesan dari IP ini. Silakan coba lagi dalam 1 jam.'
+            ]);
+        }
+
+        $model->insert([
+            'name'       => $this->request->getPost('name'),
+            'email'      => $this->request->getPost('email'),
+            'message'    => $this->request->getPost('message'),
+            'ip_address' => $ip,
+            'status'     => 'unread',
+            'created_at' => date('Y-m-d H:i:s'),
+        ]);
+
+        return $this->response->setJSON([
+            'status'  => 'success',
+            'message' => 'Pesan berhasil dikirim Terima kasih sudah menghubungi kami.'
+        ]);
+    }
 
     public function packages(): string
     {
@@ -52,9 +85,57 @@ class PublicController extends BaseController
     }
     public function book_now(): string
     {
+        $model = new PackageModel();
+
+        // Ambil data paket yang diperlukan
+        $packages = $model
+            ->select('id, name, description')
+            ->findAll();
+
+        // Decode JSON description
+        foreach ($packages as &$package) {
+            $package['description'] = !empty($package['description'])
+                ? json_decode($package['description'], true)
+                : [];
+        }
+        unset($package); // penting
 
         return view('book_now', [
-            'title' => 'contact'
+            'packages' => $packages,
+            'title'    => 'booking'
+        ]);
+    }
+
+
+    public function submitbooking()
+    {
+        $model = new BookingModel();
+        $ip    = $this->request->getIPAddress();
+
+        $count = $model->where('ip_address', value: $ip)
+            ->where('created_at >=', date('Y-m-d H:i:s', strtotime('-1 hour')))
+            ->countAllResults();
+
+        if ($count >= 3) {
+            return $this->response->setJSON([
+                'status'  => 'error',
+                'message' => 'Terlalu banyak pesan dari IP ini. Silakan coba lagi dalam 1 jam.'
+            ]);
+        }
+
+        $model->insert([
+            'name'          => $this->request->getPost('name'),
+            'email'         => $this->request->getPost('email'),
+            'phone'         => $this->request->getPost('phone'),
+            'wedding_date'  => $this->request->getPost('date'),
+            'package_id'    => $this->request->getPost('package_id'),
+            'status'        => 'pending',
+            'ip_address'    => $ip,
+        ]);
+
+        return $this->response->setJSON([
+            'status'  => 'success',
+            'message' => 'Pesan berhasil dikirim Terima kasih sudah menghubungi kami.'
         ]);
     }
 }

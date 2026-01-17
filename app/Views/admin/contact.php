@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,65 +12,97 @@
 
 <body class="bg-gray-100 font-[Montserrat]">
 
-<div class="flex min-h-screen">
+    <div class="flex min-h-screen">
 
-    <!-- Sidebar -->
-    <aside class="w-64 bg-[#b43b5c] text-white flex flex-col">
-        <div class="p-6 text-2xl font-bold border-b border-white/20">
-            Admin Panel
-        </div>
+        <!-- Sidebar -->
+        <?= $this->include('admin/layout/navbar') ?>
 
-        <nav class="flex-1 p-4 space-y-3">
-            <a href="<?= base_url('admin/dashboard') ?>" class="block px-4 py-2 rounded-lg hover:bg-white/20">Dashboard</a>
-            <a href="<?= base_url('admin/booking') ?>" class="block px-4 py-2 rounded-lg hover:bg-white/20">Booking</a>
-            <a href="<?= base_url('admin/contact') ?>" class="block px-4 py-2 rounded-lg bg-white/20">Pesan Kontak</a>
-        </nav>
-    </aside>
+        <!-- Content -->
+        <main class="flex-1 p-8">
 
-    <!-- Content -->
-    <main class="flex-1 p-8">
+            <div class="flex items-center justify-between mb-6 ">
+                <h1 class="text-3xl font-bold text-gray-700">
+                    Pesan Kontak
+                </h1>
 
-        <h1 class="text-3xl font-bold text-gray-700 mb-6">
-            Pesan Kontak
-        </h1>
+                <form method="get" class="inline-block ml-4">
+                    <select name="status"
+                        onchange="this.form.submit()"
+                        class="border rounded px-3 py-1 text-sm">
+                        <option value="">Semua</option>
+                        <option value="unread" <?= request()->getGet('status') == 'unread' ? 'selected' : '' ?>>
+                            Unread
+                        </option>
+                        <option value="read" <?= request()->getGet('status') == 'read' ? 'selected' : '' ?>>
+                            Read
+                        </option>
+                    </select>
+                </form>
 
-        <div class="bg-white rounded-xl shadow p-6 overflow-x-auto">
-            <table class="w-full border-collapse min-w-[700px]">
-                <thead>
-                    <tr class="border-b text-gray-500">
-                        <th class="py-3 text-left">Nama</th>
-                        <th class="py-3 text-left">Email</th>
-                        <th class="py-3 text-left">Pesan</th>
-                        <th class="py-3 text-left">Tanggal</th>
-                        <th class="py-3 text-center">Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
+            </div>
 
-                    <tr class="border-b">
-                        <td class="py-3">Rina</td>
-                        <td class="py-3">rina@mail.com</td>
-                        <td class="py-3 text-gray-600">
-                            Apakah paket gold bisa custom?
-                        </td>
-                        <td class="py-3">10-07-2026</td>
-                        <td class="py-3 text-center space-x-2">
-                            <button class="px-3 py-1 rounded bg-blue-500 text-white text-sm">
-                                Detail
-                            </button>
-                            <button class="px-3 py-1 rounded bg-red-500 text-white text-sm">
-                                Hapus
-                            </button>
-                        </td>
-                    </tr>
 
-                </tbody>
-            </table>
-        </div>
+            <div class="bg-white rounded-xl shadow p-6 overflow-x-auto">
+                <table class="w-full border-collapse min-w-[700px]">
+                    <thead>
+                        <tr class="border-b text-gray-500">
+                            <th class="py-3 text-left">Nama</th>
+                            <th class="py-3 text-left">Email</th>
+                            <th class="py-3 text-left">Pesan</th>
+                            <th class="py-3 text-left">Tanggal</th>
+                            <th class="py-3 text-center">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php if (!empty($contacts)): ?>
+                            <?php foreach ($contacts as $contact): ?>
+                                <tr class="border-b hover:bg-gray-50 transition">
+                                    <td class="py-3">
+                                        <?= esc($contact['name']) ?>
+                                    </td>
 
-    </main>
+                                    <td class="py-3">
+                                        <?= esc($contact['email']) ?>
+                                    </td>
 
-</div>
+                                    <td class="py-3 text-gray-600 max-w-xs truncate">
+                                        <?= esc($contact['message']) ?>
+                                    </td>
+
+                                    <td class="py-3">
+                                        <?= date('d-m-Y', strtotime($contact['created_at'])) ?>
+                                    </td>
+
+                                    <td class="py-3 text-center space-x-2">
+                                        <a href="<?= base_url('admin/contact/' . $contact['id']) ?>"
+                                            class="inline-block px-3 py-1 rounded bg-blue-500 text-white text-sm hover:bg-blue-600">
+                                            Detail
+                                        </a>
+
+                                        <a href="<?= base_url('admin/contact/delete/' . $contact['id']) ?>"
+                                            onclick="return confirm('Yakin ingin menghapus pesan ini?')"
+                                            class="inline-block px-3 py-1 rounded bg-red-500 text-white text-sm hover:bg-red-600">
+                                            Hapus
+                                        </a>
+                                    </td>
+                                </tr>
+                            <?php endforeach ?>
+                        <?php else: ?>
+                            <tr>
+                                <td colspan="5" class="py-6 text-center text-gray-500">
+                                    Belum ada pesan masuk
+                                </td>
+                            </tr>
+                        <?php endif ?>
+                    </tbody>
+
+                </table>
+            </div>
+
+        </main>
+
+    </div>
 
 </body>
+
 </html>

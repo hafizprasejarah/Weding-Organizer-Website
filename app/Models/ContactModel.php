@@ -4,24 +4,20 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class BookingModel extends Model
+class ContactModel extends Model
 {
-    protected $table            = 'bookings';
+    protected $table            = 'messages';
     protected $primaryKey       = 'id';
-
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
-
-    protected $allowedFields = [
+    protected $allowedFields    = [
         'name',
         'email',
-        'phone',
-        'wedding_date',
-        'package_id',
+        'message',
         'status',
         'ip_address',
+        'created_at'
     ];
 
-
-    protected $useTimestamps = true;
+    protected $useTimestamps = false;
 }

@@ -18,7 +18,6 @@
         <!-- navbar section -->
         <section class="fixed top-0  w-full z-99"> <?= $this->include('layout/navbar') ?></section>
 
-        <!-- hero section -->
         <section
             class="hero-section h-screen w-full relative pt-30 sm:pt-38 md:pt-38 xl:pt-48 bg-cover max-h-[820px]"
             style="background-image: url('<?= base_url('assets/wedding.jpg') ?>');">

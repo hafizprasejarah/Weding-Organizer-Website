@@ -10,6 +10,8 @@ $routes->get('/services', 'PublicController::service');
 $routes->get('/gallery', 'PublicController::gallery');
 $routes->get('/packages', 'PublicController::packages');
 $routes->get('/contact', 'PublicController::contact');
+$routes->post('/contact/tambah', 'PublicController::submit');
+$routes->post('/book/tambah', 'PublicController::submitbooking');
 $routes->get('/book/transaction', 'PublicController::book_now');
 
 // admin routes
@@ -34,4 +36,12 @@ $routes->group('admin', ['filter' => 'AdminAuth'], function ($routes) {
     $routes->get('gallery/edit/(:num)', 'GalleryController::edit/$1');
     $routes->post('gallery/update/(:num)', 'GalleryController::update/$1');
     $routes->get('gallery/delete/(:num)', 'GalleryController::delete/$1');
+
+    $routes->get('booking', 'BookingController::index');
+
+    //kelola contact
+    $routes->get('contact', 'ContactController::index');
+
+    $routes->get('contact/(:num)', 'ContactController::show/$1');
+    $routes->get('contact/delete/(:num)', 'ContactController::delete/$1');
 });

@@ -14,7 +14,7 @@ class GalleryController extends BaseController
         $model = new GalleryModel();
 
         $data = [
-            'title'   => 'Gallery',
+            'title'   => 'gallery',
             'gallery' => $model->orderBy('created_at', 'DESC')->paginate(9),
             'pager'   => $model->pager
         ];
