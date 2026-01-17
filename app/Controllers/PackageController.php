@@ -16,11 +16,11 @@ class PackageController extends BaseController
 
         foreach ($packages as &$package) {
             $desc = json_decode($package['description'], true);
-
             $package['description'] = $desc[0] ?? '-';
         }
 
-        return view('admin/package', [
+        return view('admin/package', data: [
+            'title' => 'packages',
             'packages' => $packages
         ]);
     }

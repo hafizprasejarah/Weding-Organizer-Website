@@ -17,7 +17,6 @@
         <!-- Sidebar -->
         <?= $this->include('admin/layout/navbar') ?>
 
-        <!-- Content -->
         <main class="flex-1 p-8">
 
             <div class="flex items-center justify-between mb-6 ">

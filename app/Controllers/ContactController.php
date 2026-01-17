@@ -17,7 +17,7 @@ class ContactController extends BaseController
         }
 
         return view('admin/contact', [
-            'title'    => 'contact',
+            'title'    => 'contacts',
             'contacts' => $model
                 ->orderBy('created_at', 'DESC')
                 ->findAll()

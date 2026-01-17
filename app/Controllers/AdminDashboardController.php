@@ -15,27 +15,23 @@ class AdminDashboardController extends BaseController
 {
     public function index()
     {
-   
+
         $serviceModel = new ServiceModel();
         $galleryModel = new GalleryModel();
         $packageModel = new PackageModel();
         $messageModel = new MessageModel();
         $bookingModel = new BookingModel();
 
-        $data = [
-            'titles' => 'dashboard',
-            'total_booking' => $bookingModel->countAllResults(), 
+        return view('admin/dashboard', [
+            'title' => 'dashboard',
+            'total_booking' => $bookingModel->countAllResults(),
             'total_service' => $serviceModel->countAllResults(),
             'total_gallery' => $galleryModel->countAllResults(),
             'total_message' => $messageModel->countAllResults(),
             'total_package' => $packageModel->countAllResults(),
-
             'bookingData' => $bookingModel->select('bookings.*, packages.name AS package_name')
-            ->join('packages', 'packages.id = bookings.package_id')
-            ->orderBy('bookings.created_at', 'DESC')->findAll(5)
-        ];
-
-
-        return view('admin/dashboard', $data);
+                ->join('packages', 'packages.id = bookings.package_id')
+                ->orderBy('bookings.created_at', 'DESC')->findAll(5)
+        ]);
     }
 }
