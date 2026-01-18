@@ -26,12 +26,12 @@
         <section class="pt-32 pb-24 bg-gradient-to-b from-[#fdecef] to-[#f8cfd6]">
             <div class="max-w-6xl mx-auto px-6">
 
-                <!-- Title -->
+            
                 <h2 class="text-center logo-font text-[#b43b5c] text-[40px] md:text-[48px] mb-12">
                     Love Gallery
                 </h2>
 
-                <!-- Gallery Grid -->
+        
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 
                     <?php foreach ($gallery as $item): ?>
@@ -48,7 +48,7 @@
                                         <?= $item['category'] ?>
                                     </h3>
                                     <p class="text-sm opacity-90">
-                                        <?= $item['description'] ?> dawsdadawasdaaw sdawdsadawds dsadwsadawdsadwad dsadawdsadawdsad dwadsadwdsad sdwdasdawdsadwa sdawdsadw
+                                        <?= $item['description'] ?>
                                     </p>
                                 </div>
                             </div>

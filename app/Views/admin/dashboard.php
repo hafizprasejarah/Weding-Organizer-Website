@@ -17,7 +17,7 @@
         <!-- Sidebar -->
         <?= $this->include('admin/layout/navbar') ?>
 
-   
+
         <main class="flex-1 p-8">
             <h1 class="text-3xl font-bold text-gray-700 mb-8">
                 Dashboard
@@ -67,17 +67,13 @@
                             <?php foreach ($bookings as $booking) : ?>
                                 <tr class="border-b">
                                     <td class="py-3"><?= esc($booking['name']) ?></td>
+                                    <td class="py-3"><?= esc($booking['email']) ?></td>
+                                    <td class="py-3"><?= esc($booking['wedding_date']) ?></td>
+                                    <td class="py-3"><?= esc($booking['package_name']) ?></td>
                                     <td class="py-3">
-                                        <?= esc(date('d-m-Y', strtotime($booking['date']))) ?>
-                                    </td>
-                                    <td class="py-3">
-                                        <?= esc($booking['package_id']) ?>
-                                    </td>
-                                    <td class="py-3 font-semibold
-                                    <?= $booking['status'] === 'confirmed'
-                                    ? 'text-green-600'
-                                    : 'text-yellow-600' ?>">
-                                        <?= esc(ucfirst($booking['status'])) ?>
+                                        <span class="px-3 py-1 rounded-full bg-yellow-100 text-yellow-700 text-sm">
+                                            <?= esc($booking['status']) ?>
+                                        </span>
                                     </td>
                                 </tr>
                             <?php endforeach ?>

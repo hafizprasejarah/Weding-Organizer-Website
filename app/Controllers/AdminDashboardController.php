@@ -29,7 +29,7 @@ class AdminDashboardController extends BaseController
             'total_gallery' => $galleryModel->countAllResults(),
             'total_message' => $messageModel->countAllResults(),
             'total_package' => $packageModel->countAllResults(),
-            'bookingData' => $bookingModel->select('bookings.*, packages.name AS package_name')
+            'bookings' => $bookingModel->select('bookings.*, packages.name AS package_name')
                 ->join('packages', 'packages.id = bookings.package_id')
                 ->orderBy('bookings.created_at', 'DESC')->findAll(5)
         ]);

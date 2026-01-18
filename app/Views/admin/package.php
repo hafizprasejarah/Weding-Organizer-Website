@@ -16,21 +16,33 @@
 
         <!-- Sidebar -->
         <?= $this->include('admin/layout/navbar') ?>
-        <!-- Content -->
+
+
         <main class="flex-1 p-8 relative">
 
             <?php if (session()->getFlashdata('error')) : ?>
-                <div class="absolute left-0 right-0 top-0 mb-6 p-4 rounded-lg bg-red-100 text-red-700 border border-red-300">
-                    <?= session()->getFlashdata('error') ?>
+                <div id="flash-message"
+                    class="fixed top-6 left-1/2 -translate-x-1/2 z-50
+               flex items-center gap-3
+               px-6 py-4 rounded-xl
+               bg-red-100 text-red-700 border border-red-300
+               shadow-lg transition-all duration-500">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <span><?= session()->getFlashdata('error') ?></span>
                 </div>
             <?php endif; ?>
 
             <?php if (session()->getFlashdata('success')) : ?>
-                <div class="absolute left-0 right-0 top-0 mb-6 p-4 rounded-lg bg-green-100 text-green-700 border border-green-300">
-                    <?= session()->getFlashdata('success') ?>
+                <div id="flash-message"
+                    class="fixed top-6 left-1/2 -translate-x-1/2 z-50
+               flex items-center gap-3
+               px-6 py-4 rounded-xl
+               bg-green-100 text-green-700 border border-green-300
+               shadow-lg transition-all duration-500">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span><?= session()->getFlashdata('success') ?></span>
                 </div>
             <?php endif; ?>
-
 
             <div class="flex justify-between items-center mb-6">
                 <h1 class="text-3xl font-bold text-gray-700">Kelola Paket</h1>
@@ -104,6 +116,18 @@
 
     </div>
 
-</body>
 
+
+</body>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const flash = document.getElementById('flash-message');
+            if (flash) {
+                setTimeout(() => {
+                    flash.classList.add('opacity-0', '-translate-y-4');
+                    setTimeout(() => flash.remove(), 500);
+                }, 2000);
+            }
+        });
+    </script>
 </html>

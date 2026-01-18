@@ -40,23 +40,23 @@
                         <ul class="space-y-4 text-gray-700">
                             <li>
                                 <strong> Alamat:</strong><br>
-                                Jl. Mawar Indah No. 25, Jakarta
+                                Jl. Grinsing no 21 Gambiran Cemani Sukoharjo Jawa Tengah
                             </li>
                             <li>
                                 <strong> Telepon / WhatsApp:</strong><br>
-                                <a href="https://wa.me/6281234567890" class="text-[#b43b5c] hover:underline">
+                                <a href="https://wa.me/088221038389" class="text-[#b43b5c] hover:underline">
                                     +62 812-3456-7890
                                 </a>
                             </li>
                             <li>
                                 <strong> Email:</strong><br>
-                                <a href="mailto:wedding@organizer.com" class="text-[#b43b5c] hover:underline">
-                                    wedding@organizer.com
+                                <a href="mailto:afizpratama0809@gmail.com" class="text-[#b43b5c] hover:underline">
+                                    hafizpratama0809@gmail.com
                                 </a>
                             </li>
                             <li>
                                 <strong> Jam Operasional:</strong><br>
-                                Senin – Sabtu (09.00 – 18.00)
+                                Senin - Sabtu (09.00 - 18.00)
                             </li>
                         </ul>
                     </div>

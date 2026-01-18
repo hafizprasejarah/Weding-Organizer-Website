@@ -30,6 +30,7 @@ class ContactController extends BaseController
         $model->update($id, row: ['status' => 'read']);
 
         return view('admin/detail', [
+             'title'    => 'contacts',
             'contact' => $model->find($id)
         ]);
     }

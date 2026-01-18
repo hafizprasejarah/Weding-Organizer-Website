@@ -13,7 +13,7 @@ class BookingController extends BaseController
         $model = new BookingModel();
         $status = $this->request->getGet('status'); // read | unread
 
-        if (in_array($status, ['pending', 'confirmed', 'canceled'])) {
+        if (in_array($status, ['pending', 'confirmed', 'cancelled'])) {
             $model->where('status', $status);
         }
 
@@ -31,15 +31,22 @@ class BookingController extends BaseController
     public function confirm($id)
     {
         $model = new BookingModel();
-        $model->update(id: $id, row: ['status' => 'confirmed']);
 
-        return $model->update(id: $id, row: ['status' => 'confirmed']);
+        $model->update($id, [
+            'status' => 'confirmed'
+        ]);
+
+        return redirect()->back()->with('success', 'Booking berhasil dikonfirmasi');
     }
+
     public function cancel($id)
     {
         $model = new BookingModel();
-        $model->update(id: $id, row: ['status' => 'confirmed']);
 
-        return $model->update(id: $id, row: ['status' => 'confirmed']);
+        $model->update($id, [
+            'status' => 'cancelled'
+        ]);
+
+        return redirect()->back()->with('success', 'Booking berhasil dibatalkan');
     }
 }

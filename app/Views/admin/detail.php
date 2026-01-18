@@ -31,21 +31,10 @@
                         </span>
                     </div>
 
-                   
+
                     <form method="post"
                         action="<?= base_url('admin/contact/status/' . $contact['id']) ?>">
                         <?= csrf_field() ?>
-
-                        <select name="status"
-                            onchange="this.form.submit()"
-                            class="border rounded px-3 py-1 text-sm">
-                            <option value="read" <?= $contact['status'] === 'read' ? 'selected' : '' ?>>
-                                Read
-                            </option>
-                            <option value="unread" <?= $contact['status'] === 'unread' ? 'selected' : '' ?>>
-                                Unread
-                            </option>
-                        </select>
                     </form>
                 </div>
 
@@ -61,7 +50,7 @@
                     <p><?= esc($contact['email']) ?></p>
                 </div>
 
-         
+
                 <div>
                     <p class="text-gray-500 text-sm">Tanggal</p>
                     <p><?= date('d M Y H:i', strtotime($contact['created_at'])) ?></p>
@@ -86,4 +75,5 @@
     </div>
 
 </body>
+
 </html>

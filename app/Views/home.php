@@ -34,6 +34,7 @@
                         EXPERIENCE YOUR DREAM WEDDING WITH US
                     </p>
                     <button
+                        onclick="window.location.href='<?= base_url('/services') ?>'"
                         class="px-4 py-2 md:px-6 md:py-3 text-[14px] md:text-[16px] rounded-[7px] font-bold text-[#bb2a55] bg-[linear-gradient(160deg,#FADADD,#F4B6C2)] hover:brightness-105 transition">
                         Our Services
                     </button>
@@ -85,7 +86,7 @@
                 <h1 class="logo-font text-center text-[40px] xl:text-[60px] lg:text-[50px] md:text-[40px] font-medium w-[100%] sm:w-[40%] [text-shadow:0_3px_8px_rgba(0,0,0,0.5)]">Our Love Stories</h1>
                 <div class="hidden sm:block border rounded-[5px] border-[#FFF5F7] w-[30%]"></div>
             </div>
-            
+
             <div class="text-center z-10">
                 <p class="text-[#FFF5F7] text-[14px] md:text-[15px]  xl:text-[25px] lg:text-[20px] font-medium font-heading heading-underline [text-shadow:0_3px_8px_rgba(0,0,0,0.5)]">
                     Unforgettable Weddings
@@ -104,10 +105,10 @@
                 </div>
             </div>
 
-            <form action="" class="relative z-10 flex w-full justify-center">
-                <button class= "px-4 py-2 md:px-6 md:py-3 w-fit text-{14px} md:text-[16px] rounded-[7px] font-bold text-[#FFF5F7]  bg-[radial-gradient(circle_at_top,#C63D5C,#a3284d)] hover:brightness-110 transition">
+            <div class="relative z-10 flex w-full justify-center">
+                <button onclick="window.location.href='<?= base_url('/gallery') ?>'" class="px-4 py-2 md:px-6 md:py-3 w-fit text-{14px} md:text-[16px] rounded-[7px] font-bold text-[#FFF5F7]  bg-[radial-gradient(circle_at_top,#C63D5C,#a3284d)] hover:brightness-110 transition">
                     View Gallery</button>
-            </form>
+            </div>
         </section>
 
         <section class="relative w-full h-[80vh] overflow-hidden max-h-[820px]">
@@ -133,6 +134,7 @@
                 </p>
 
                 <button
+                    onclick="window.location.href='<?= base_url('/book/transaction') ?>'"
                     class="mt-8 px-4 py-2 md:px-6 md:py-3 w-fit text-[16px] rounded-[7px] font-bold text-[#bb2a55] bg-[linear-gradient(160deg,#FADADD,#F4B6C2)] hover:brightness-105 transition">
                     Book Your Consultation
                 </button>
@@ -141,10 +143,10 @@
         </section>
 
         <section class="h-[5vh] bg-[#f9cfd3]">
-    
+
+            <?= $this->include('layout/footer') ?>
         </section>
 
-        <?= $this->include('layout/footer') ?>
     </div>
 
 </body>

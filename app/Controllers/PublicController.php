@@ -67,14 +67,28 @@ class PublicController extends BaseController
             'message' => 'Pesan berhasil dikirim Terima kasih sudah menghubungi kami.'
         ]);
     }
-
     public function packages(): string
     {
+        $model = new PackageModel();
+
+        $packages = $model
+            ->orderBy('created_at', 'DESC')
+            ->findAll();
+
+        if (!$packages) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('Package tidak ditemukan');
+        }
+
+        foreach ($packages as &$package) {
+            $package['description'] = json_decode($package['description'], true) ?? [];
+        }
 
         return view('package', [
-            'title' => 'package'
+            'title' => 'package',
+            'packages' => $packages
         ]);
     }
+
 
     public function contact(): string
     {
@@ -87,18 +101,18 @@ class PublicController extends BaseController
     {
         $model = new PackageModel();
 
-        // Ambil data paket yang diperlukan
+
         $packages = $model
             ->select('id, name, description')
             ->findAll();
 
-        // Decode JSON description
+
         foreach ($packages as &$package) {
             $package['description'] = !empty($package['description'])
                 ? json_decode($package['description'], true)
                 : [];
         }
-        unset($package); // penting
+        unset($package);
 
         return view('book_now', [
             'packages' => $packages,
